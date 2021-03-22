@@ -185,4 +185,27 @@ class BarBallFromEdgeView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BarBallFromEdgeView) {
+
+        private val animator : Animator = Animator(view)
+        private val bbfe : BarBalLFromEdge = BarBalLFromEdge(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            bbfe.draw(canvas, paint)
+            animator.animate {
+                bbfe.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bbfe.startUdpating {
+                animator.start()
+            }
+        }
+    }
 }
