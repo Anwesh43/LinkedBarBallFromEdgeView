@@ -210,4 +210,12 @@ class BarBallFromEdgeView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : BarBallFromEdgeView {
+            val view : BarBallFromEdgeView = BarBallFromEdgeView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
