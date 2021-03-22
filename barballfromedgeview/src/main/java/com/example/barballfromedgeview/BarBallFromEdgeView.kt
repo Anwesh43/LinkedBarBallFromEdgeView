@@ -41,7 +41,7 @@ fun Canvas.drawBarBallFromEdge(i : Int, scale : Float, w : Float, h : Float, pai
     save()
     translate(w / 2, (h / 2 - ballSize / 2) * sf4)
     paint.color = colors[i]
-    drawRect(RectF(0f, 0f, w, barSize * sf1), paint)
+    drawRect(RectF(-w / 2, 0f, w / 2, barSize * sf1), paint)
     paint.color = backColor
     for (j in 0..1) {
         save()
