@@ -1,0 +1,3 @@
+include ':barballfromedgeview'
+include ':app'
+rootProject.name = "LinkedBarBallFromEdgeView"
